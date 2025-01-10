@@ -18,13 +18,13 @@ const Game = () => {
         },
     };
 
-    const renderPiece = () => (
-        <img src={pieces} alt="piece" />
+    const renderPiece = (type, color) => (
+        <img src={pieces[color][type]} alt={`${type}-${color}`} className="chess-piece" />
     )
 
     return (
         <div className="chess-board">
-            <div className="cell">{renderPiece()}</div>
+            <div className="cell">{renderPiece('rook', 'black')}</div>
         </div>
     );
 };
